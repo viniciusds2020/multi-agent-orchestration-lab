@@ -1,0 +1,14 @@
+services:
+  lab:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      DATABASE_PATH: /app/data/orchestration_lab.db
+      GROQ_MODEL: ${GROQ_MODEL:-llama-3.3-70b-versatile}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+    volumes:
+      - lab-data:/app/data
+    restart: unless-stopped
+volumes:
+  lab-data:
+
