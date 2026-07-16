@@ -1,4 +1,0 @@
-[
-  "tests/test_orchestration.py::test_both_engines_run_without_api_key",
-  "tests/test_orchestration.py::test_capabilities_and_health"
-]
