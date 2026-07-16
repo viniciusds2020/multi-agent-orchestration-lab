@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Multi-Agent Lab</title><link rel="stylesheet" href="/assets/styles.css"></head>
+<body>
+<header><a class="brand"><span>MA</span><div>Multi-Agent Lab<small>ORCHESTRATION BENCHMARK</small></div></a>
+<nav><a href="#lab">Laboratório</a><a href="#architecture">Arquitetura</a><a href="#history">Histórico</a></nav>
+<div class="status"><i></i><span id="mode">Simulation ready</span></div></header>
+<main>
+  <section class="hero"><div><p class="kicker">CREWAI × LANGGRAPH</p><h1>Um problema.<br><em>Dois paradigmas.</em></h1><p class="lead">Compare colaboração orientada a papéis com orquestração explícita por estados usando a mesma equipe de agentes.</p></div>
+  <div class="graph"><span class="core">AI</span><span class="node n1">Plan</span><span class="node n2">Research</span><span class="node n3">Build</span><span class="node n4">Review</span></div></section>
+
+  <section id="lab"><div class="section-title"><div><p class="kicker">EXPERIMENTO</p><h2>Execute a mesma missão</h2></div><span class="pill">4 agentes · 2 motores</span></div>
+  <div class="composer"><textarea id="objective" placeholder="Ex.: Projete uma solução de IA para classificar chamados, reduzir tempo de atendimento e manter aprovação humana..."></textarea>
+  <div class="actions"><label><input type="checkbox" id="live"> Usar Groq ao vivo</label><button id="compare">Comparar motores →</button></div></div>
+  <div class="comparison">
+    <article class="engine crew"><div class="engine-head"><div><span class="logo">C</span><div><small>ROLE-BASED</small><h3>CrewAI</h3></div></div><b id="crew-time">—</b></div><div class="trace" id="crew-output"><div class="empty">Aguardando uma missão.</div></div></article>
+    <article class="engine lang"><div class="engine-head"><div><span class="logo">L</span><div><small>STATE GRAPH</small><h3>LangGraph</h3></div></div><b id="lang-time">—</b></div><div class="trace" id="lang-output"><div class="empty">Aguardando uma missão.</div></div></article>
+  </div></section>
+
+  <section id="architecture"><div class="section-title"><div><p class="kicker">DESIGN</p><h2>Mesma equipe, controles diferentes</h2></div></div>
+  <div class="features"><article><span>01</span><h3>Planejador</h3><p>Decompõe o objetivo em entregas e critérios verificáveis.</p></article><article><span>02</span><h3>Pesquisador</h3><p>Mapeia evidências, restrições, riscos e hipóteses.</p></article><article><span>03</span><h3>Arquiteto</h3><p>Define componentes, segurança e observabilidade.</p></article><article><span>04</span><h3>Crítico</h3><p>Revisa lacunas e cria critérios de aceite.</p></article></div>
+  <div class="matrix"><div><h3>CrewAI</h3><p>Agentes, tarefas, contexto e processo sequencial. Abstração alta para colaboração e prototipação rápida.</p></div><div><h3>LangGraph</h3><p>Estado tipado, nós e arestas explícitas. Controle fino para ciclos, persistência e human-in-the-loop.</p></div></div></section>
+
+  <section id="history"><div class="section-title"><div><p class="kicker">OBSERVABILIDADE</p><h2>Histórico de execuções</h2></div><button class="ghost" id="refresh">Atualizar</button></div><div class="table"><div class="thead"><span>Motor</span><span>Objetivo</span><span>Modo</span><span>Latência</span><span>Tokens</span></div><div id="runs"></div></div></section>
+</main>
+<footer><span>Multi-Agent Orchestration Lab</span><span>FastAPI · CrewAI · LangGraph · Groq</span></footer>
+<div id="toast"></div><script src="/assets/app.js"></script></body></html>
+
